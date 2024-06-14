@@ -1,3 +1,4 @@
-export function makeHello(name: string) {
-	return `Hello from ${name}!`;
-}
+export * from "./logger";
+export * from "./match";
+export * from "./string";
+export * from "./time";
