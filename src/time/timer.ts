@@ -48,7 +48,7 @@ export class Timer {
 		});
 	}
 
-	createTimer = (callback: CallBack, delay?: number, isTimeout?: boolean) => {
+	private createTimer = (callback: CallBack, delay?: number, isTimeout?: boolean) => {
 		let id = this.lastId;
 		id = id + 1;
 
