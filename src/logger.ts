@@ -9,8 +9,12 @@ export class Logger {
 		this.header = header;
 	}
 
-	log = (message: string, logType?: LogType, level?: number) => {
-		const finalMessage = trimString(`${this.header} ${message}`);
+	log = (message: unknown[], logType?: LogType, level?: number) => {
+		let finalMessage = this.header ?? "";
+
+		for (const str of message) {
+			if (typeIs(str, "string")) finalMessage = trimString(`${finalMessage} ${str}`);
+		}
 
 		switch (logType) {
 			case "warn":
